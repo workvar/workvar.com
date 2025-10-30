@@ -1,0 +1,18 @@
+# Video Assets Directory
+
+Place your video files here:
+- hero-background.mp4 - For the hero section background video
+- demo.mp4 - For the demo/product video
+
+Recommended video specifications:
+- Format: MP4 (H.264 codec)
+- Resolution: 1920x1080 or higher
+- Frame rate: 30fps
+- Bitrate: Optimized for web (2-5 Mbps)
+- Duration: Keep hero background short (10-30s looping)
+
+For best performance, consider:
+1. Compressing videos before uploading
+2. Using tools like HandBrake or FFmpeg for optimization
+3. Creating multiple versions for different screen sizes
+4. Adding poster images as fallbacks

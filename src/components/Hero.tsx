@@ -1,18 +1,35 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-bg.jpg";
+import heroPoster from "@/assets/hero-video-poster.jpg";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background with gradient overlay */}
+      {/* Video Background with fallback */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-hero z-10" />
-        <img 
-          src={heroBackground} 
-          alt="" 
-          className="w-full h-full object-cover opacity-40"
-        />
+        <div className="absolute inset-0 bg-gradient-hero/80 z-10" />
+        
+        {/* Video element - replace src with your actual video URL */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={heroPoster}
+          className="w-full h-full object-cover opacity-50"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+          {/* Fallback to static image */}
+          <img 
+            src={heroBackground} 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </video>
+        
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 animate-pulse-slow z-10" />
       </div>
       
       {/* Content */}

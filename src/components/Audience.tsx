@@ -1,4 +1,5 @@
-import { Target, Rocket, Users } from "lucide-react";
+import { Target, Rocket } from "lucide-react";
+import enterpriseImg from "@/assets/enterprise.jpg";
 
 const benefits = [
   "Reclaim deep uninterrupted focus",
@@ -46,10 +47,19 @@ export const Audience = () => {
           </div>
           
           {/* Enterprise Promise */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-subtle border border-border p-8 md:p-12 shadow-medium">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-primary opacity-10 blur-3xl rounded-full" />
-            <div className="relative z-10 space-y-4 text-center">
-              <div className="inline-flex p-3 rounded-xl bg-primary/10">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-subtle border border-border shadow-medium">
+            {/* Background Image */}
+            <div className="absolute inset-0 opacity-20">
+              <img 
+                src={enterpriseImg} 
+                alt="Enterprise network"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
+            
+            <div className="relative z-10 p-8 md:p-12 space-y-6 text-center">
+              <div className="inline-flex p-3 rounded-xl bg-primary/10 backdrop-blur-sm">
                 <Rocket className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-2xl md:text-3xl font-bold">
@@ -59,6 +69,15 @@ export const Audience = () => {
                 Built for individuals — architected for scale. WorkVar is crafted to 
                 evolve seamlessly into team and organizational intelligence.
               </p>
+              
+              {/* Enterprise Network Visualization */}
+              <div className="mt-8 rounded-xl overflow-hidden border border-primary/20 shadow-glow">
+                <img 
+                  src={enterpriseImg} 
+                  alt="Enterprise network visualization"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
