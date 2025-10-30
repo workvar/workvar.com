@@ -1,10 +1,13 @@
 import { Play } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import timeAwarenessImg from "@/assets/time-awareness.jpg";
 
 export const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const { ref, isVisible } = useScrollAnimation();
 
   const handlePlay = () => {
     setIsPlaying(true);
@@ -12,21 +15,31 @@ export const VideoSection = () => {
   };
 
   return (
-    <section className="py-24 bg-background">
+    <section ref={ref} className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto space-y-8">
           {/* Section Header */}
-          <div className="text-center space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center space-y-4"
+          >
             <h2 className="text-3xl md:text-4xl font-bold">
               See WorkVar in Action
             </h2>
             <p className="text-xl text-muted-foreground">
               Watch how focus mode transforms your workspace
             </p>
-          </div>
+          </motion.div>
 
           {/* Video Player */}
-          <div className="relative rounded-2xl overflow-hidden shadow-glow border border-primary/20 group">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative rounded-2xl overflow-hidden shadow-glow border border-primary/20 group"
+          >
             {/* Video Thumbnail */}
             <div className="relative aspect-video bg-gradient-subtle">
               <img
@@ -70,7 +83,7 @@ export const VideoSection = () => {
                 Experience deep focus with intelligent distraction blocking
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,4 +1,6 @@
 import { Eye, Clock, Waves, Coffee } from "lucide-react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import focusModeImg from "@/assets/focus-mode.jpg";
 import timeAwarenessImg from "@/assets/time-awareness.jpg";
 import soundscapesImg from "@/assets/soundscapes.jpg";
@@ -32,27 +34,37 @@ const features = [
 ];
 
 export const Features = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-24 bg-background">
+    <section ref={ref} className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Section Header */}
-          <div className="text-center space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center space-y-4"
+          >
             <h2 className="text-4xl md:text-5xl font-bold">
               What we're building
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               WorkVar creates a focused execution environment around you
             </p>
-          </div>
+          </motion.div>
           
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="group relative bg-gradient-subtle rounded-2xl overflow-hidden border border-border hover:border-primary/40 transition-all duration-300 hover:shadow-medium"
                 >
                   {/* Feature Image Background */}
@@ -84,7 +96,7 @@ export const Features = () => {
                       />
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

@@ -1,4 +1,6 @@
 import { Target, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import enterpriseImg from "@/assets/enterprise.jpg";
 
 const benefits = [
@@ -9,12 +11,19 @@ const benefits = [
 ];
 
 export const Audience = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-24 bg-gradient-hero">
+    <section ref={ref} className="py-24 bg-gradient-hero">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto space-y-16">
           {/* Who It's For */}
-          <div className="text-center space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-6"
+          >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Target className="w-4 h-4 text-primary" />
               <span className="text-sm font-semibold text-primary">Built for High-Performance Professionals</span>
@@ -29,25 +38,33 @@ export const Audience = () => {
               <span className="text-foreground font-semibold">Individual power today.</span>{" "}
               Team-ready tomorrow.
             </p>
-          </div>
+          </motion.div>
           
           {/* Benefits Grid */}
           <div className="grid md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                 className="flex items-start gap-4 p-6 bg-card rounded-xl border border-border shadow-soft"
               >
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-primary flex items-center justify-center">
                   <span className="text-xs font-bold text-primary-foreground">{index + 1}</span>
                 </div>
                 <p className="text-lg font-medium">{benefit}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
           
           {/* Enterprise Promise */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-subtle border border-border shadow-medium">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="relative overflow-hidden rounded-2xl bg-gradient-subtle border border-border shadow-medium"
+          >
             {/* Background Image */}
             <div className="absolute inset-0 opacity-20">
               <img 
@@ -79,7 +96,7 @@ export const Audience = () => {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

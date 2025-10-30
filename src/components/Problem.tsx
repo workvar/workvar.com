@@ -1,12 +1,21 @@
 import { AlertCircle, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const Problem = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-24 bg-gradient-subtle">
+    <section ref={ref} className="py-24 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Problem Statement */}
-          <div className="text-center space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-6"
+          >
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               You're great at what you do.
             </h2>
@@ -15,12 +24,17 @@ export const Problem = () => {
               shallow interruptions. The work isn't the problem.{" "}
               <span className="text-foreground font-semibold">The noise around it is.</span>
             </p>
-          </div>
+          </motion.div>
           
           {/* Pain Points & Solutions */}
           <div className="grid md:grid-cols-2 gap-8 pt-8">
             {/* Pain Point 1 */}
-            <div className="bg-card rounded-xl p-8 shadow-soft border border-border space-y-4">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-card rounded-xl p-8 shadow-soft border border-border space-y-4"
+            >
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-destructive/10">
                   <AlertCircle className="w-6 h-6 text-destructive" />
@@ -40,10 +54,15 @@ export const Problem = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
             
             {/* Pain Point 2 */}
-            <div className="bg-card rounded-xl p-8 shadow-soft border border-border space-y-4">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-card rounded-xl p-8 shadow-soft border border-border space-y-4"
+            >
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-destructive/10">
                   <AlertCircle className="w-6 h-6 text-destructive" />
@@ -63,7 +82,7 @@ export const Problem = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

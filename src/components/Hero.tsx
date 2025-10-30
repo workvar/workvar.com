@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import heroBackground from "@/assets/hero-bg.jpg";
 import heroPoster from "@/assets/hero-video-poster.jpg";
 
@@ -34,37 +35,72 @@ export const Hero = () => {
       
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
+        <div className="max-w-4xl mx-auto space-y-8">
           {/* Credibility badges */}
-          <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center justify-center gap-4 text-sm text-muted-foreground"
+          >
             <span className="px-4 py-1.5 rounded-full bg-background/50 backdrop-blur-sm border border-primary/20">
               Trusted by PMs at Meta & Stripe
             </span>
-          </div>
+          </motion.div>
           
           {/* Main headline */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-5xl md:text-7xl font-bold leading-tight tracking-tight"
+          >
             You start your day with{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="bg-gradient-primary bg-clip-text text-transparent inline-block"
+            >
               intention
-            </span>
-          </h1>
+            </motion.span>
+          </motion.h1>
           
-          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed"
+          >
             But within minutes, your focus is stolen. WorkVar builds a protective 
             environment around your attention before distractions even begin.
-          </p>
+          </motion.p>
           
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+          >
             A quiet system that clears the noise — so you stay locked in flow.
-          </p>
+          </motion.p>
           
-          <p className="text-base text-muted-foreground italic">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
+            className="text-base text-muted-foreground italic"
+          >
             AI that removes busywork while you focus on decisions.
-          </p>
+          </motion.p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.6 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
+          >
             <Button variant="hero" size="xl" className="group">
               Get Early Access
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -72,7 +108,7 @@ export const Hero = () => {
             <Button variant="outlineWhite" size="xl">
               Learn More
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
       

@@ -5,18 +5,22 @@ import { VideoSection } from "@/components/VideoSection";
 import { Audience } from "@/components/Audience";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <Problem />
-      <Features />
-      <VideoSection />
-      <Audience />
-      <CTA />
-      <Footer />
-    </main>
+    <>
+      <ScrollProgress />
+      <main className="min-h-screen">
+        <Hero />
+        <Problem />
+        <Features />
+        <VideoSection />
+        <Audience />
+        <CTA />
+        <Footer />
+      </main>
+    </>
   );
 };
 
