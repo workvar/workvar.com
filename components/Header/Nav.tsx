@@ -10,9 +10,9 @@ export default function Nav() {
 
   return (
     <nav className="hidden md:flex items-center space-x-10">
-      {NAV_ITEMS.map((item) => (
+      {NAV_ITEMS.map((item, index) => (
         <Link
-          key={item.path}
+          key={index}
           href={item.path}
           className={`text-sm font-medium tracking-wide transition-colors ${
             pathname === item.path

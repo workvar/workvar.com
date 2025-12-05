@@ -38,9 +38,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-xl md:text-2xl text-stone-600 max-w-2xl mx-auto">
-          We tell ourselves that we are busy. But often, we are just distracted.{' '}
-          <br />
-          WorkVar is an invitation to return to the signal.
+          We tell ourselves that we are busy. But often, we are just distracted. WorkVar is an invitation to return to the signal.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 pt-8">

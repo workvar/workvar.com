@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
-import { Sparkles } from 'lucide-react';
 import { General } from '@/components';
 import { Product } from '@/types';
 
@@ -30,7 +29,7 @@ export default function ProductDetail({ product, index }: ProductDetailProps) {
             }
           });
         },
-        { once: true }
+        // Remove invalid 'once' option which is not part of IntersectionObserverInit.
       );
       observer.observe(imageRef.current);
     }
@@ -54,18 +53,10 @@ export default function ProductDetail({ product, index }: ProductDetailProps) {
           >
             <div className="rounded-[3rem] overflow-hidden bg-stone-100 aspect-[4/5] relative shadow-2xl shadow-stone-200/50">
               <img
-                src={`https://picsum.photos/seed/${product.id}art/1000/1200?grayscale`}
+                src={product.image}
                 alt={product.name}
                 className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-1000"
               />
-              <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-stone-100">
-                <div className="flex items-center text-xs font-bold tracking-widest uppercase text-forest-800 mb-2">
-                  <Sparkles size={12} className="mr-2" /> Signature Feature
-                </div>
-                <p className="font-serif text-xl text-stone-900 italic">
-                  {product.features[0]}
-                </p>
-              </div>
             </div>
           </div>
 

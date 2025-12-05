@@ -1,9 +1,8 @@
 import AboutHeaderComponent from './AboutHeader';
-import StorySectionComponent from './StorySection';
-import QuoteSectionComponent from './QuoteSection';
-import PhilosophySectionComponent from './PhilosophySection';
+import ChapterISectionComponent from './ChapterISection';
+import QuoteSectionIComponent from './QuoteSectionI';
+import QuoteSectionIIComponent from './QuoteSectionII';
+import ChapterIISectionComponent from './ChapterIISection';
+import ChapterIIISectionComponent from './ChapterIIISection';
 
-export const AboutHeader = AboutHeaderComponent;
-export const StorySection = StorySectionComponent;
-export const QuoteSection = QuoteSectionComponent;
-export const PhilosophySection = PhilosophySectionComponent;
+export { AboutHeaderComponent, ChapterISectionComponent, QuoteSectionIComponent, QuoteSectionIIComponent, ChapterIISectionComponent, ChapterIIISectionComponent };

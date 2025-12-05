@@ -4,13 +4,13 @@ import { NavItem, Feature, Product, Resource } from './types';
 export const NAV_ITEMS: NavItem[] = [
   { label: 'The Artifacts', path: '/products' },
   { label: 'Our Story', path: '/about' },
-  { label: 'Library', path: '/resources' },
+  { label: 'Library', path: '/blogs' },
   { label: 'Correspondence', path: '/contact' },
 ];
 
 export const CORE_FEATURES: Feature[] = [
   {
-    title: 'Ding Ding Ding!',
+    title: 'Ding Ding!',
     description: 'Your attention is constantly pulled into pings, feeds, and distractions. You pick your phone on every single notification.',
     icon: BellOff,
   },
@@ -33,24 +33,18 @@ export const PRODUCTS: Product[] = [
     tagline: 'A calming, decluttered YouTube experience.',
     description: "YouTube is an incredible tool for learning and inspiration, but it's also filled with distractions engineered to keep you scrolling. SileoTube helps you reclaim your attention by removing distractions automatically.",
     features: ['Clean Landing page', 'Zen Viewing Mode', 'Shorts Recommendations Removal', 'Shorts Viewing removal.'],
-    cta: 'Enter the Theater',
+    cta: 'Stop doomscrolling',
+    image: 'https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/sileotube_4Kab9GbM3.jpeg',
   },
   {
-    id: 'projex',
-    name: 'ProjeX',
-    tagline: "The Cartographer's Table.",
-    description: 'When the path forward is obscured by chaos, ProjeX acts as your map. It is a project manager for those who value completion over complexity. Plain text. Clear vision. One step at a time.',
-    features: ['Markdown Chronicles', 'Local-first Storage', 'The Timeline', 'Focus Rituals'],
-    cta: 'Begin Mapping',
-  },
-  {
-    id: 'deepwriter',
-    name: 'DeepWriter',
-    tagline: 'The Empty Page.',
-    description: 'A digital quill for the modern scribe. No formatting bars, no distractions. Just you, the cursor, and the story waiting to be told.',
-    features: ['Typewriter Mode', 'Ink Export (PDF)', 'Daily Oaths', 'Ambient Forests'],
-    cta: 'Coming Soon',
-  },
+    id: 'patty',
+    name: 'Patty',
+    tagline: "Your AI project manager.",
+    description: 'Everyone is vibe coding projects, but only a few are planning before they start. Patty is your AI project manager that helps you plan your projects before you start pending those expensive AI tokens.',
+    features: ['Deep context awareness', 'Auto-sprints', 'Perfect user-stories', 'Auto test cases'],
+    cta: 'Start planning',
+    image: 'https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/patty_JcBVaygq_R.jpeg',
+  }
 ];
 
 export const RESOURCES: Resource[] = [

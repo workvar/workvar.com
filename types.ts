@@ -18,7 +18,7 @@ export interface Product {
   description: string;
   features: string[];
   cta: string;
-  imagePlaceholder?: string;
+  image: string;
 }
 
 export interface Resource {

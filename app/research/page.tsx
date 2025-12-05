@@ -38,7 +38,7 @@ export default function Research() {
                 to get back on task after being interrupted."
               </>
             }
-            explanation="When you switch context to check a notification, your brain doesn't just switch back instantly. It leaves "attention residue" on the previous task. This fragmentation effectively lowers your functional IQ by up to 10 points—more than losing a night of sleep."
+            explanation="When you switch context to check a notification, your brain doesn't just switch back instantly. It leaves 'attention residue' on the previous task. This fragmentation effectively lowers your functional IQ by up to 10 points—more than losing a night of sleep."
             source="Source: Gloria Mark, University of California, Irvine"
           />
 
@@ -47,7 +47,7 @@ export default function Research() {
             exhibit="Exhibit B: Cognitive Drain"
             title="The Mere Presence."
             quote="The mere presence of your smartphone reduces brain power, even if it is turned off and face down."
-            explanation="Research indicates that when your phone is visible, a part of your brain is actively working to inhibit the impulse to check it. This "brain drain" reduces your available cognitive capacity for deep work and problem solving."
+            explanation="Research indicates that when your phone is visible, a part of your brain is actively working to inhibit the impulse to check it. This 'brain drain' reduces your available cognitive capacity for deep work and problem solving."
             source="Source: Journal of the Association for Consumer Research"
           />
 

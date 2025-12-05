@@ -1,4 +1,5 @@
 import { General } from '@/components';
+import Link from 'next/link';
 
 export default function EpilogueSection() {
   return (
@@ -16,9 +17,11 @@ export default function EpilogueSection() {
             Step into the quiet.
           </p>
           <div className="flex justify-center pt-8">
-            <General.ButtonComponent size="lg" variant="primary" className="px-12">
-              Begin Your Chapter
-            </General.ButtonComponent>
+            <Link href="/products">
+              <General.ButtonComponent size="lg" variant="primary" className="px-12">
+                Get Started
+              </General.ButtonComponent>
+            </Link>
           </div>
         </div>
       </div>

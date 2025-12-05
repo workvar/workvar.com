@@ -28,9 +28,9 @@ export default function MobileMenu() {
 
       {isMenuOpen && (
         <div className="md:hidden absolute top-20 left-0 right-0 bg-stone-50 border-b border-stone-200 p-6 flex flex-col space-y-4 shadow-xl">
-          {NAV_ITEMS.map((item) => (
+          {NAV_ITEMS.map((item, index) => (
             <Link
-              key={item.path}
+              key={index}
               href={item.path}
               className={`block px-4 py-3 text-lg font-serif font-medium rounded-xl ${
                 pathname === item.path

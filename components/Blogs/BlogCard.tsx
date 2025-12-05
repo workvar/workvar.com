@@ -1,13 +1,25 @@
 import { BookOpen } from 'lucide-react';
 import { Resource } from '@/types';
+import Link from 'next/link';
 
 interface ResourceCardProps {
   resource: Resource;
 }
 
+function getSlugFromId(id: string): string {
+  const resourceMap: Record<string, string> = {
+    '1': 'the-myth-of-multitasking',
+    '2': 'building-your-local-garden',
+    '3': 'reclaiming-the-attention-economy',
+  };
+  return resourceMap[id] || id;
+}
+
 export default function ResourceCard({ resource }: ResourceCardProps) {
+  const slug = getSlugFromId(resource.id);
+
   return (
-    <div className="flex flex-col h-full group cursor-pointer">
+    <Link href={`/blogs/${slug}`} className="flex flex-col h-full group cursor-pointer">
       <div className="bg-stone-50 p-8 rounded-tr-[3rem] rounded-bl-[3rem] mb-6 border border-stone-100 group-hover:bg-forest-50/50 transition-colors duration-500 min-h-[200px] flex flex-col justify-between">
         <div className="flex justify-between items-start">
           <span className="font-serif italic text-stone-400 text-sm">
@@ -38,7 +50,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
           Read entry &rarr;
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

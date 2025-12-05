@@ -1,4 +1,4 @@
-export default function AboutHeader() {
+export default function AboutHeaderComponent() {
   return (
     <section className="w-full pt-32 pb-20 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
