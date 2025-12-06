@@ -1,0 +1,15 @@
+[
+  {
+    "value": "Inquiry",
+    "label": "General Inquiry"
+  },
+  {
+    "value": "Assistance",
+    "label": "Request for Assistance"
+  },
+  {
+    "value": "Tale",
+    "label": "Share a Story"
+  }
+]
+

@@ -1,0 +1,19 @@
+[
+  {
+    "label": "The Artifacts",
+    "path": "/products"
+  },
+  {
+    "label": "Our Story",
+    "path": "/about"
+  },
+  {
+    "label": "Library",
+    "path": "/blogs"
+  },
+  {
+    "label": "Correspondence",
+    "path": "/contact"
+  }
+]
+

@@ -2,12 +2,10 @@
 id: '3'
 category: 'Manifesto'
 title: 'Reclaiming the Attention Economy'
-date: 'Dec 10, 2023'
+date: 'Dec 6, 2025'
 readTime: '5 min read'
 summary: 'Our declaration of independence from the algorithms that seek to harvest our time.'
 ---
-
-# Reclaiming the Attention Economy
 
 We are living in an attention economy, and our attention is being harvested. Every notification, every recommendation, every "you might also like" is designed to keep us engaged, scrolling, consuming. But our attention doesn't belong to them—it belongs to us.
 

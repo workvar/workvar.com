@@ -10,7 +10,20 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'ik.imagekit.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
     ],
+  },
+  webpack: (config) => {
+    // Allow importing markdown files as raw text with ?raw query
+    config.module.rules.push({
+      test: /\.md$/,
+      resourceQuery: /raw/,
+      type: 'asset/source',
+    });
+    return config;
   },
 };
 

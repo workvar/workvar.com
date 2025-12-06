@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "slug": "the-myth-of-multitasking",
+    "category": "Philosophy",
+    "title": "The Myth of Multitasking",
+    "date": "Oct 12, 2023",
+    "readTime": "8 min read",
+    "summary": "Why the human mind was never meant to be in two places at once, and how to return to the present."
+  },
+  {
+    "id": "2",
+    "slug": "building-your-local-garden",
+    "category": "Guide",
+    "title": "Building Your Local Garden",
+    "date": "Nov 05, 2023",
+    "readTime": "12 min read",
+    "summary": "A technical tome on configuring your digital environment to exist independently of the cloud."
+  },
+  {
+    "id": "3",
+    "slug": "reclaiming-the-attention-economy",
+    "category": "Manifesto",
+    "title": "Reclaiming the Attention Economy",
+    "date": "Dec 10, 2023",
+    "readTime": "5 min read",
+    "summary": "Our declaration of independence from the algorithms that seek to harvest our time."
+  }
+]
+

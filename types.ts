@@ -23,6 +23,7 @@ export interface Product {
 
 export interface Resource {
   id: string;
+  slug?: string;
   category: 'Blog' | 'Guide' | 'Documentation' | 'Philosophy' | 'Manifesto';
   title: string;
   date: string;

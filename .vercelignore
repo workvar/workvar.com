@@ -1,0 +1,2 @@
+# Don't ignore content directory - it's needed for the build
+!content/

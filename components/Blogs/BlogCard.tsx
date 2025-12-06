@@ -1,3 +1,5 @@
+'use client';
+
 import { BookOpen } from 'lucide-react';
 import { Resource } from '@/types';
 import Link from 'next/link';
@@ -6,17 +8,8 @@ interface ResourceCardProps {
   resource: Resource;
 }
 
-function getSlugFromId(id: string): string {
-  const resourceMap: Record<string, string> = {
-    '1': 'the-myth-of-multitasking',
-    '2': 'building-your-local-garden',
-    '3': 'reclaiming-the-attention-economy',
-  };
-  return resourceMap[id] || id;
-}
-
 export default function ResourceCard({ resource }: ResourceCardProps) {
-  const slug = getSlugFromId(resource.id);
+  const slug = resource.slug || resource.id;
 
   return (
     <Link href={`/blogs/${slug}`} className="flex flex-col h-full group cursor-pointer">

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Ding Ding!",
+    "description": "Your attention is constantly pulled into pings, feeds, and distractions. You pick your phone on every single notification.",
+    "icon": "BellOff"
+  },
+  {
+    "title": "Productivity Crushed",
+    "description": "The never ending noise is crushing your productivity and you are on your phone when you should be working.",
+    "icon": "FileWarning"
+  },
+  {
+    "title": "You dread boredom",
+    "description": "Every chance you get, you are on your phone. You dread boredom. You are not present in your life. You are not present in your work.",
+    "icon": "FlagOff"
+  }
+]
+

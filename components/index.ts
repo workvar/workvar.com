@@ -4,6 +4,7 @@ import * as HomePage from './Home';
 import * as ProductsPage from './Products';
 import * as ResearchPage from './Research';
 import * as BlogsPage from './Blogs';
+import * as MissionPage from './Mission';
 import * as General from './general';
 import * as Header from './Header';
 import * as Footer from './Footer';
@@ -15,6 +16,7 @@ export {
     ProductsPage,
     ResearchPage,
     BlogsPage,
+    MissionPage,
     General,
     Footer,
     Header

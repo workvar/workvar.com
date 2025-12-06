@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
-import { Send } from 'lucide-react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { Send, AlertCircle } from 'lucide-react';
 import Button from '@/components/general/Button';
+import contactTopics from '@/data/contactTopics.json';
 
 type FormData = {
   name: string;
@@ -20,12 +22,47 @@ export default function ContactForm() {
     reset,
   } = useForm<FormData>();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  const onSubmit = (data: FormData) => {
-    setTimeout(() => {
+  const onSubmit = async (data: FormData) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      // Execute invisible reCAPTCHA
+      const recaptchaToken = await recaptchaRef.current?.executeAsync();
+      
+      if (!recaptchaToken) {
+        setError('reCAPTCHA verification failed. Please try again.');
+        setIsLoading(false);
+        return;
+      }
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...data, recaptchaToken }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit contact form');
+      }
+
       setIsSubmitted(true);
       reset();
-    }, 1000);
+      recaptchaRef.current?.reset();
+    } catch (err: any) {
+      setError(err.message || 'Something went wrong. Please try again.');
+      recaptchaRef.current?.reset();
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -41,7 +78,10 @@ export default function ContactForm() {
           Your words are traveling to us. We shall reply in kind.
         </p>
         <button
-          onClick={() => setIsSubmitted(false)}
+          onClick={() => {
+            setIsSubmitted(false);
+            setError(null);
+          }}
           className="mt-12 text-sm text-forest-800 font-medium hover:text-forest-600 uppercase tracking-widest"
         >
           Write Another
@@ -105,9 +145,11 @@ export default function ContactForm() {
           {...register('subject')}
           className="w-full px-0 py-3 bg-transparent border-b-2 border-stone-200 focus:border-forest-600 outline-none transition-colors text-xl text-stone-800 font-serif cursor-pointer"
         >
-          <option value="Inquiry">General Inquiry</option>
-          <option value="Assistance">Request for Assistance</option>
-          <option value="Tale">Share a Story</option>
+          {contactTopics.map((topic) => (
+            <option key={topic.value} value={topic.value}>
+              {topic.label}
+            </option>
+          ))}
         </select>
       </div>
 
@@ -131,11 +173,24 @@ export default function ContactForm() {
         )}
       </div>
 
+      {error && (
+        <div className="flex items-center gap-2 p-4 bg-red-50 text-red-800 border border-red-200 rounded-lg">
+          <AlertCircle size={20} className="flex-shrink-0" />
+          <span className="text-sm font-serif">{error}</span>
+        </div>
+      )}
+
       <div className="pt-6 flex justify-end">
-        <Button type="submit" size="lg" className="px-12">
-          Send Letter
+        <Button type="submit" size="lg" className="px-12" disabled={isLoading}>
+          {isLoading ? 'Sending...' : 'Send Letter'}
         </Button>
       </div>
+
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        size="invisible"
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+      />
     </form>
   );
 }

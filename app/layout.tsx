@@ -15,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <General.Analytics />
         <General.LayoutComponent>
           {children}
         </General.LayoutComponent>

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "sileotube",
+    "name": "SileoTube",
+    "tagline": "A calming, decluttered YouTube experience.",
+    "description": "YouTube is an incredible tool for learning and inspiration, but it's also filled with distractions engineered to keep you scrolling. SileoTube helps you reclaim your attention by removing distractions automatically.",
+    "features": [
+      "Clean Landing page",
+      "Zen Viewing Mode",
+      "Shorts Recommendations Removal",
+      "Shorts Viewing removal."
+    ],
+    "cta": "Stop doomscrolling",
+    "image": "https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/sileotube_4Kab9GbM3.jpeg"
+  },
+  {
+    "id": "patty",
+    "name": "Patty",
+    "tagline": "Your AI project manager.",
+    "description": "Everyone is vibe coding projects, but only a few are planning before they start. Patty is your AI project manager that helps you plan your projects before you start pending those expensive AI tokens.",
+    "features": [
+      "Deep context awareness",
+      "Auto-sprints",
+      "Perfect user-stories",
+      "Auto test cases"
+    ],
+    "cta": "Start planning",
+    "image": "https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/patty_JcBVaygq_R.jpeg"
+  }
+]
+

@@ -36,6 +36,7 @@ interface ProductItemProps {
 
 const ProductItem: React.FC<ProductItemProps> = ({ product, index }) => {
   const imageRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     if (imageRef.current) {
@@ -52,9 +53,49 @@ const ProductItem: React.FC<ProductItemProps> = ({ product, index }) => {
             }
           });
         },
-        { once: true }
+        { once: true } as IntersectionObserverInit
       );
-      observer.observe(imageRef.current);
+      observer.observe(imageRef.current as Element);
+    }
+  }, []);
+
+  useGSAP(() => {
+    if (textRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const title = textRef.current?.querySelector('h2');
+              const tagline = textRef.current?.querySelector('h3');
+              const description = textRef.current?.querySelector('.prose p');
+              const capabilities = textRef.current?.querySelector('.space-y-4');
+              const button = textRef.current?.querySelector('.flex.items-center');
+              
+              const timeline = gsap.timeline();
+              
+              if (title) {
+                timeline.fromTo(title, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' });
+              }
+              if (tagline) {
+                timeline.fromTo(tagline, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.4');
+              }
+              if (description) {
+                timeline.fromTo(description, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, '-=0.3');
+              }
+              if (capabilities) {
+                timeline.fromTo(capabilities, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.4');
+              }
+              if (button) {
+                timeline.fromTo(button, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3');
+              }
+              
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { once: true } as IntersectionObserverInit
+      );
+      observer.observe(textRef.current as Element);
     }
   }, []);
 
@@ -80,10 +121,10 @@ const ProductItem: React.FC<ProductItemProps> = ({ product, index }) => {
                   <p className="font-serif text-xl text-stone-900 italic">{product.features[0]}</p>
                 </div>
               </div>
-            </motion.div>
+        </div>
 
-            {/* Narrative */}
-            <div className="flex-1 space-y-10">
+        {/* Narrative */}
+        <div ref={textRef} className="flex-1 space-y-10">
               <div>
                 <div className="font-serif text-9xl text-stone-100 absolute -translate-y-16 -translate-x-6 -z-10 select-none">
                   0{index + 1}

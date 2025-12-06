@@ -1,12 +1,11 @@
 import { notFound } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { General } from '@/components';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
+import { getBlogContent } from '@/lib/blogContent';
 
 interface BlogPost {
   id: string;
@@ -20,13 +19,13 @@ interface BlogPost {
 
 async function getBlogPost(slug: string): Promise<BlogPost | null> {
   try {
-    const filePath = path.join(process.cwd(), 'content', 'blogs', `${slug}.md`);
+    const fileContents = getBlogContent(slug);
     
-    if (!fs.existsSync(filePath)) {
+    if (!fileContents) {
+      console.error(`Blog post not found: ${slug}`);
       return null;
     }
 
-    const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContents);
 
     // Convert markdown to HTML
@@ -34,27 +33,18 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
     const contentHtml = processedContent.toString();
 
     return {
-      id: data.id,
-      category: data.category,
-      title: data.title,
-      date: data.date,
-      readTime: data.readTime,
-      summary: data.summary,
+      id: data.id || '',
+      category: data.category || '',
+      title: data.title || '',
+      date: data.date || '',
+      readTime: data.readTime || '',
+      summary: data.summary || '',
       content: contentHtml,
     };
   } catch (error) {
     console.error('Error reading blog post:', error);
     return null;
   }
-}
-
-function getSlugFromId(id: string): string {
-  const resourceMap: Record<string, string> = {
-    '1': 'the-myth-of-multitasking',
-    '2': 'building-your-local-garden',
-    '3': 'reclaiming-the-attention-economy',
-  };
-  return resourceMap[id] || id;
 }
 
 export default async function BlogPostPage({
@@ -71,7 +61,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <General.SectionComponent background="sand" className="pt-32 pb-16">
+      <General.BlogSectionComponent background="sand" className="pt-20 pb-8">
         <div className="max-w-4xl mx-auto">
           <Link
             href="/blogs"
@@ -102,10 +92,10 @@ export default async function BlogPostPage({
             </div>
           </div>
         </div>
-      </General.SectionComponent>
+      </General.BlogSectionComponent>
 
-      <General.SectionComponent background="white">
-        <article className="max-w-3xl mx-auto">
+      <General.BlogSectionComponent background="white" className="pt-8 pb-24">
+        <article className="max-w-4xl mx-auto">
           <div
             className="prose prose-lg prose-stone max-w-none
               prose-headings:font-serif prose-headings:text-stone-900
@@ -121,21 +111,18 @@ export default async function BlogPostPage({
             dangerouslySetInnerHTML={{ __html: blogPost.content }}
           />
         </article>
-      </General.SectionComponent>
+      </General.BlogSectionComponent>
     </>
   );
 }
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
-  const resources = [
-    { id: '1', slug: 'the-myth-of-multitasking' },
-    { id: '2', slug: 'building-your-local-garden' },
-    { id: '3', slug: 'reclaiming-the-attention-economy' },
-  ];
+  const { getBlogs } = await import('@/lib/blogs');
+  const blogs = getBlogs();
 
-  return resources.map((resource) => ({
-    slug: resource.slug,
+  return blogs.map((blog) => ({
+    slug: blog.slug,
   }));
 }
 

@@ -2,12 +2,10 @@
 id: '1'
 category: 'Philosophy'
 title: 'The Myth of Multitasking'
-date: 'Oct 12, 2023'
+date: 'Dec 2, 2025'
 readTime: '8 min read'
 summary: 'Why the human mind was never meant to be in two places at once, and how to return to the present.'
 ---
-
-# The Myth of Multitasking
 
 The modern world celebrates the multitasker. We admire those who can juggle emails while on a call, scroll through feeds while watching a presentation, and respond to messages while writing code. But this celebration is built on a fundamental misunderstanding of how the human mind works.
 

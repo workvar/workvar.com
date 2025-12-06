@@ -2,12 +2,10 @@
 id: '2'
 category: 'Guide'
 title: 'Building Your Local Garden'
-date: 'Nov 05, 2023'
-readTime: '12 min read'
+date: 'Nov 15, 2025'
+readTime: '5 min read'
 summary: 'A technical tome on configuring your digital environment to exist independently of the cloud.'
 ---
-
-# Building Your Local Garden
 
 In an age where everything lives in the cloud, there's something radical about keeping your work local. This isn't about rejecting modern tools—it's about creating a space that's truly yours, independent of algorithms, tracking, and the constant pull of the network.
 
