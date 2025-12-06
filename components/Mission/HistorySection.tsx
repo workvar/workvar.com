@@ -21,7 +21,7 @@ export default function HistorySection() {
 
           <div className="space-y-6 text-lg md:text-xl text-stone-600 leading-relaxed font-light font-serif mb-10">
             <p>
-              WorkVar was born from a simple observation: the tools we use to work are increasingly designed to capture our attention rather than serve our goals. When we launched our first product, SileoTube, we set out to prove that technology could be different—that we could build tools that respect your attention instead of competing for it.
+              WorkVar was born from a simple observation that the tools that we use to work are increasingly designed to capture our attention rather than serve our goals. When we launched our first product, SileoTube, we set out to prove that technology could be different. That we could build tools that respect your attention instead of competing for it.
             </p>
             <p>
               Today, WorkVar continues to evolve beyond reactive productivity tools toward a future where technology amplifies your focus rather than fragments it. We&apos;re building the next generation of productivity tools that put you in control of your attention and your time.

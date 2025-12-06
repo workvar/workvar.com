@@ -15,22 +15,22 @@ export default function PrinciplesSection() {
     },
     {
       title: 'Build focus and control',
-      description: "Focus is freedom. It's the power to choose where your mind goes instead of having it taken from you. When everything around us competes for our attention, simply staying present becomes a heroic act. We design tools that protect that focus — shielding you from what drains your energy and strengthening your ability to direct your own life. When you control your attention, you control your outcomes.",
+      description: "Focus is freedom. It's the power to choose where your mind goes instead of having it taken from you. When everything around you competes for attention, just staying present becomes a heroic act. We design tools that help you be present and protect your focus, shielding you from what drains your energy and strengthening your ability to direct your own life. When you control your attention, you control your outcomes.",
       imageSeed: 'focus',
     },
     {
       title: 'Serve everyone',
-      description: "Access to focus shouldn't depend on income, privilege, or geography. WorkVar exists for anyone who wants to reclaim their attention, whether they're a student hustling in a cafe or a founder building the future. That’s why we’re committed to offering tools that remain free and open. The right to work without interruption — to think deeply, learn, create, and build — belongs to everyone.",
+      description: "Access to focus shouldn't be a luxury. The ability to think clearly, work deeply, and make progress in life should be within reach for all. WorkVar is a business, but our mission goes beyond profit. We build tools that deliver real value and earn your support, not your data or attention. We are committed to keeping our core focus-protecting capabilities widely accessible, while offering premium features that help sustain our growth. Everyone deserves a workspace that respects their time and potential.",
       imageSeed: 'serve',
     },
     {
       title: 'Keep people safe and protect privacy',
-      description: "Your attention data is incredibly personal — a blueprint of how your mind works. We believe it should stay yours. Unlike platforms that exploit behavior, we refuse to track or sell the very moments that define your life. Everything we create starts with trust: secure by default, local by design, transparent in every decision. When you know your digital environment is safe, your mind is free to do its best work.",
+      description: "Your attention data is incredibly personal. It's a blueprint of how your mind works. We believe it should stay yours. Unlike platforms that exploit behavior, we refuse to track or sell the very moments that define your life. Everything we create starts with trust and respect for your privacy. We are committed to keeping your data secure by default and transparent in every decision. When you know your digital environment is safe, your mind is free to do its best work.",
       imageSeed: 'privacy',
     },
     {
       title: 'Promote sustainable productivity',
-      description: "Success shouldn't require sacrificing your well-being. We reject the outdated idea that productivity is about endless output and constant motion. True progress comes from focus, energy, and balance — the kind that lasts beyond a single burst of motivation. Our mission is to support work that feels satisfying, not exhausting. To help people achieve more by burning out less. To show that doing what matters is always more powerful than doing everything.",
+      description: "Success shouldn't require sacrificing your well-being. We reject the outdated idea that productivity is about endless output and constant motion. True progress comes from focus, energy, and balance. The kind that lasts beyond a single burst of motivation. Our mission is to support work that feels satisfying, not exhausting. To help people achieve more by burning out less. To show that doing what matters is always more powerful than doing everything.",
       imageSeed: 'productivity',
     },
   ];
