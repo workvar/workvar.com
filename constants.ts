@@ -11,24 +11,25 @@ const iconMap: Record<string, LucideIcon> = {
   FlagOff,
 };
 
-// Export NAV_ITEMS from JSON
-export const NAV_ITEMS: NavItem[] = navItemsData as NavItem[];
+// Export NAV_ITEMS from JSON with safety check
+export const NAV_ITEMS: NavItem[] = (Array.isArray(navItemsData) ? navItemsData : []) as NavItem[];
 
-// Export CORE_FEATURES from JSON with icon mapping
-export const CORE_FEATURES: Feature[] = coreFeaturesData.map((feature) => ({
+// Export CORE_FEATURES from JSON with icon mapping and safety check
+export const CORE_FEATURES: Feature[] = (Array.isArray(coreFeaturesData) ? coreFeaturesData : []).map((feature) => ({
   ...feature,
   icon: iconMap[feature.icon] || BellOff, // Fallback to BellOff if icon not found
 })) as Feature[];
 
-// Export PRODUCTS from JSON
-export const PRODUCTS: Product[] = productsData as Product[];
+// Export PRODUCTS from JSON with safety check
+export const PRODUCTS: Product[] = (Array.isArray(productsData) ? productsData : []) as Product[];
 
 // Resources are now loaded server-side to avoid fs module issues in client components
 // Use getResources() function in server components instead
 export async function getResources(): Promise<Resource[]> {
   // Dynamic import to ensure this only runs server-side
   const { getBlogs } = await import('@/lib/blogs');
-  return getBlogs().map((blog) => ({
+  const blogs = getBlogs();
+  return Array.isArray(blogs) ? blogs.map((blog) => ({
     id: blog.id,
     slug: blog.slug,
     category: blog.category as Resource['category'],
@@ -36,7 +37,7 @@ export async function getResources(): Promise<Resource[]> {
     date: blog.date,
     readTime: blog.readTime,
     summary: blog.summary,
-  }));
+  })) : [];
 }
 
 // Legacy export for backwards compatibility (will be empty array in client)

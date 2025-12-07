@@ -6,9 +6,9 @@ export default function Products() {
   return (
     <>
       <ProductHeader />
-      {PRODUCTS.map((product, index) => (
+      {PRODUCTS && PRODUCTS.length > 0 ? PRODUCTS.map((product, index) => (
         <ProductDetail key={product.id} product={product} index={index} />
-      ))}
+      )) : null}
     </>
   );
 }

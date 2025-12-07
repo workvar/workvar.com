@@ -11,7 +11,8 @@
       "Shorts Viewing removal."
     ],
     "cta": "Stop doomscrolling",
-    "image": "https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/sileotube_4Kab9GbM3.jpeg"
+    "image": "https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/sileotube_4Kab9GbM3.jpeg",
+    "ctaUrl": "https://sileotube.workvar.com"
   },
   {
     "id": "patty",
@@ -25,7 +26,8 @@
       "Auto test cases"
     ],
     "cta": "Start planning",
-    "image": "https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/patty_JcBVaygq_R.jpeg"
+    "image": "https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/patty_JcBVaygq_R.jpeg",
+    "ctaUrl": "https://patty.workvar.com"
   }
 ]
 

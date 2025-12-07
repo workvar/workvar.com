@@ -78,9 +78,9 @@ export default function ChapterSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
-          {CORE_FEATURES.map((feature, index) => (
+          {CORE_FEATURES && CORE_FEATURES.length > 0 ? CORE_FEATURES.map((feature, index) => (
             <FeatureCard key={index} feature={feature} index={index} />
-          ))}
+          )) : null}
         </div>
       </div>
     </section>

@@ -19,6 +19,7 @@ export interface Product {
   features: string[];
   cta: string;
   image: string;
+  ctaUrl: string;
 }
 
 export interface Resource {

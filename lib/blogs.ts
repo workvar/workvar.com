@@ -11,7 +11,7 @@ export interface Blog {
 }
 
 export function getBlogs(): Blog[] {
-  return blogsData as Blog[];
+  return (Array.isArray(blogsData) ? blogsData : []) as Blog[];
 }
 
 export function getBlogBySlug(slug: string): Blog | undefined {

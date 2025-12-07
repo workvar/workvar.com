@@ -28,7 +28,7 @@ export default function MobileMenu() {
 
       {isMenuOpen && (
         <div className="md:hidden absolute top-20 left-0 right-0 bg-stone-50 border-b border-stone-200 p-6 flex flex-col space-y-4 shadow-xl">
-          {NAV_ITEMS.map((item, index) => (
+          {NAV_ITEMS && NAV_ITEMS.length > 0 ? NAV_ITEMS.map((item, index) => (
             <Link
               key={index}
               href={item.path}
@@ -40,7 +40,7 @@ export default function MobileMenu() {
             >
               {item.label}
             </Link>
-          ))}
+          )) : null}
           <div className="pt-4">
             <Link href="/research" className="block w-full">
               <General.ButtonComponent fullWidth>Read the Report</General.ButtonComponent>

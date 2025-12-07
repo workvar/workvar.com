@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { General } from '@/components';
@@ -38,15 +39,13 @@ export default function ProductDetail({ product, index }: ProductDetailProps) {
 
   return (
     <section
-      className={`w-full py-20 md:py-32 ${
-        index % 2 === 0 ? 'bg-white' : 'bg-stone-100'
-      }`}
+      className={`w-full py-20 md:py-32 ${index % 2 === 0 ? 'bg-white' : 'bg-stone-100'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`flex flex-col gap-16 items-center ${
-            index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
-          }`}
+          className={`flex flex-col gap-16 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
+            }`}
         >
           <div
             ref={imageRef}
@@ -91,9 +90,11 @@ export default function ProductDetail({ product, index }: ProductDetailProps) {
               </div>
 
               <div className="flex items-center gap-6">
-                <General.ButtonComponent size="lg" variant="primary">
-                  {product.cta}
-                </General.ButtonComponent>
+                <Link href={product.ctaUrl} target="_blank">
+                  <General.ButtonComponent size="lg" variant="primary">
+                    {product.cta}
+                  </General.ButtonComponent>
+                </Link>
               </div>
             </div>
           </div>

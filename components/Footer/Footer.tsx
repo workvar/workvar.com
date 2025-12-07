@@ -11,6 +11,7 @@ export default function Footer() {
   const companyLinks = [
     { label: 'About Us', href: '/about' },
     { label: 'Mission', href: '/mission' },
+    { label: 'Media Kit', href: '/media-kit' },
     // { label: 'Careers', href: '#', isExternal: true },
     { label: 'Contact', href: '/contact' },
   ];

@@ -10,7 +10,7 @@ export default function Nav() {
 
   return (
     <nav className="hidden md:flex items-center space-x-10">
-      {NAV_ITEMS.map((item, index) => (
+      {NAV_ITEMS && NAV_ITEMS.length > 0 ? NAV_ITEMS.map((item, index) => (
         <Link
           key={index}
           href={item.path}
@@ -22,7 +22,7 @@ export default function Nav() {
         >
           {item.label}
         </Link>
-      ))}
+      )) : null}
       <Link href="/research">
         <General.ButtonComponent size="sm" variant="primary">Read the Report</General.ButtonComponent>
       </Link>

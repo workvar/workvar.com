@@ -72,9 +72,9 @@ export default function ProductPreview() {
         </div>
 
         <div className="space-y-32">
-          {PRODUCTS.slice(0, 2).map((product, i) => (
+          {PRODUCTS && PRODUCTS.length > 0 ? PRODUCTS.slice(0, 2).map((product, i) => (
             <ProductPreviewItem key={product.id} product={product} index={i} />
-          ))}
+          )) : null}
         </div>
 
         <div className="mt-24 text-center">
