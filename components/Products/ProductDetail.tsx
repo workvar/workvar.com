@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { General } from '@/components';
@@ -52,9 +53,11 @@ export default function ProductDetail({ product, index }: ProductDetailProps) {
             className="flex-1 w-full"
           >
             <div className="rounded-[3rem] overflow-hidden bg-stone-100 aspect-[4/5] relative shadow-2xl shadow-stone-200/50">
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
+                width={1000}
+                height={1250}
                 className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-1000"
               />
             </div>

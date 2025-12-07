@@ -20,7 +20,7 @@ export default function ChapterIIISection() {
               <p className="text-stone-800 font-medium italic text-2xl">
                 Welcome to the garden.
                 <br />
-                Let's get back to work.
+                Let&apos;s get back to work.
               </p>
             </div>
             <p>

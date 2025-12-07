@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Section from '../components/general/Section';
 import { Quote } from 'lucide-react';
 
@@ -22,17 +23,17 @@ const About: React.FC = () => {
           </div>
           <div className="md:col-span-8 space-y-8 text-xl text-stone-600 leading-relaxed font-light font-serif">
             <p>
-              The year was 2023. The founder sat in a small apartment, illuminated only by the blue light of a monitor. He was trying to write, but the world wouldn't let him.
+              The year was 2023. The founder sat in a small apartment, illuminated only by the blue light of a monitor. He was trying to write, but the world wouldn&apos;t let him.
             </p>
             <p>
-              A notification slid onto the screen. A red dot appeared on a tab. An email arrived with "urgent" in the subject line. The thought he was holding slipped away, dissolving into the digital ether.
+              A notification slid onto the screen. A red dot appeared on a tab. An email arrived with &quot;urgent&quot; in the subject line. The thought he was holding slipped away, dissolving into the digital ether.
             </p>
             <p>
               He realized then that his computer, once a bicycle for the mind, had become an assembly line for his attention.
             </p>
             <div className="pl-8 border-l-2 border-forest-200 py-4 my-10">
               <p className="text-stone-800 font-medium italic text-2xl">
-                "We are drowning in information, while starving for wisdom."
+                &quot;We are drowning in information, while starving for wisdom.&quot;
               </p>
             </div>
             <p>
@@ -55,9 +56,11 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div className="order-2 md:order-1">
              <div className="rounded-t-full rounded-b-[1000px] overflow-hidden aspect-[3/4] border-4 border-stone-50 shadow-2xl">
-               <img 
+               <Image 
                  src="https://picsum.photos/seed/forest2/800/1000?grayscale" 
                  alt="The Forest" 
+                 width={800}
+                 height={1000}
                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms]"
                />
              </div>
@@ -69,7 +72,7 @@ const About: React.FC = () => {
               Most software is built like a shopping mall—designed to keep you inside, distracted, and consuming.
             </p>
             <p className="text-stone-600 mb-8 leading-relaxed text-lg font-light">
-              We build software like a garden. It is quiet. It grows slowly. It requires your care, but it gives back peace and sustenance. We don't track your footsteps in the garden. We don't sell tickets to your private thoughts.
+              We build software like a garden. It is quiet. It grows slowly. It requires your care, but it gives back peace and sustenance. We don&apos;t track your footsteps in the garden. We don&apos;t sell tickets to your private thoughts.
             </p>
             <div className="pt-6">
                <span className="text-forest-800 font-serif text-xl italic">Welcome to the rebellion.</span>

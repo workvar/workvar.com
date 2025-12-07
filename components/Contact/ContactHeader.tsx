@@ -10,7 +10,7 @@ export default function ContactHeader() {
             Correspondence
           </h1>
           <p className="text-xl text-stone-500 font-light font-serif italic">
-            "Words traverse the silence to connect us."
+            &quot;Words traverse the silence to connect us.&quot;
           </p>
         </div>
       </div>

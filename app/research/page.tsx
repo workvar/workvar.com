@@ -31,11 +31,11 @@ export default function Research() {
             title="The 23-Minute Cost."
             quote={
               <>
-                "It takes an average of{' '}
+                &quot;It takes an average of{' '}
                 <span className="text-stone-900 font-medium bg-forest-100/50 px-1">
                   23 minutes and 15 seconds
                 </span>{' '}
-                to get back on task after being interrupted."
+                to get back on task after being interrupted.&quot;
               </>
             }
             explanation="When you switch context to check a notification, your brain doesn't just switch back instantly. It leaves 'attention residue' on the previous task. This fragmentation effectively lowers your functional IQ by up to 10 points—more than losing a night of sleep."

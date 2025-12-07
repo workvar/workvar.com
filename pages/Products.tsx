@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { Sparkles } from 'lucide-react';
@@ -109,9 +110,11 @@ const ProductItem: React.FC<ProductItemProps> = ({ product, index }) => {
           className="flex-1 w-full"
         >
               <div className="rounded-[3rem] overflow-hidden bg-stone-100 aspect-[4/5] relative shadow-2xl shadow-stone-200/50">
-                <img 
+                <Image 
                   src={`https://picsum.photos/seed/${product.id}art/1000/1200?grayscale`} 
-                  alt={product.name} 
+                  alt={product.name}
+                  width={1000}
+                  height={1200}
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-1000"
                 />
                 <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-stone-100">

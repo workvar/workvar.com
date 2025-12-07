@@ -13,7 +13,7 @@ export default function EpilogueSection() {
             Your story is waiting.
           </h2>
           <p className="text-xl text-stone-600 font-light leading-relaxed">
-            The noise will always be there. But you don't have to listen to it.
+            The noise will always be there. But you don&apos;t have to listen to it.
             Step into the quiet.
           </p>
           <div className="flex justify-center pt-8">

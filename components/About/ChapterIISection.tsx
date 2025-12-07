@@ -17,7 +17,7 @@ export default function ChapterII() {
             </p>
             <div className="pl-8 border-l-2 border-forest-800 py-4 my-10">
               <p className="text-stone-800 font-medium italic text-2xl">
-                "Software shouldn't feel like a mall. It should feel like a garden."
+                &quot;Software shouldn&apos;t feel like a mall. It should feel like a garden.&quot;
               </p>
             </div>
             <p>

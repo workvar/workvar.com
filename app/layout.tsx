@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import './globals.css';
 import { General } from '@/components';
 
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <General.Analytics />
+        <Suspense fallback={null}>
+          <General.Analytics />
+        </Suspense>
         <General.LayoutComponent>
           {children}
         </General.LayoutComponent>

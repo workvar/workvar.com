@@ -48,9 +48,11 @@ export default function PrinciplesSection() {
         {/* Intro Image */}
         <div className="mx-auto mb-20">
           <div className="w-full overflow-hidden bg-stone-100">
-            <img
+            <Image
               src="https://picsum.photos/seed/workvar-principles/1200/675?grayscale"
               alt="Our principles"
+              width={1200}
+              height={675}
               className="w-full h-auto object-cover"
             />
           </div>

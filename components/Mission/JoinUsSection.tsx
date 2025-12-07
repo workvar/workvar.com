@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function JoinUsSection() {
   return (
     <section className="w-full py-20 md:py-32 bg-white">
@@ -8,9 +10,11 @@ export default function JoinUsSection() {
           {/* Image - matching Meta's clean layout */}
           <div className="mb-12">
             <div className="w-full overflow-hidden bg-stone-100">
-              <img
+              <Image
                 src="https://picsum.photos/seed/workvar-team/1200/675?grayscale"
                 alt="Join the WorkVar team"
+                width={1200}
+                height={675}
                 className="w-full h-auto object-cover"
               />
             </div>

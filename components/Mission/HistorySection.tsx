@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { General } from '@/components';
 
 export default function HistorySection() {
@@ -11,9 +12,11 @@ export default function HistorySection() {
           {/* Image - matching Meta's clean layout */}
           <div className="mb-12">
             <div className="w-full overflow-hidden bg-stone-200">
-              <img
+              <Image
                 src="https://picsum.photos/seed/workvar-history/1200/750?grayscale"
                 alt="WorkVar history"
+                width={1200}
+                height={750}
                 className="w-full h-auto object-cover"
               />
             </div>

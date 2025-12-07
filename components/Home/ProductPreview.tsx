@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/general/Button';
 import { PRODUCTS } from '@/constants';
@@ -19,9 +20,11 @@ function ProductPreviewItem({ product, index }: ProductPreviewItemProps) {
     >
       <div className="flex-1 w-full">
         <div className="relative rounded-t-[10rem] rounded-b-[3rem] overflow-hidden aspect-[4/5] md:aspect-[3/4]">
-          <img
+          <Image
             src={`https://picsum.photos/seed/${product.id}/900/1200?grayscale`}
             alt={product.name}
+            width={900}
+            height={1200}
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 opacity-90 hover:scale-105 ease-out"
           />
           <div className="absolute inset-0 bg-stone-900/10 mix-blend-multiply" />

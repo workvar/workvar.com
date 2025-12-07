@@ -41,8 +41,8 @@ export default function RitualSection() {
             <div className="absolute inset-0 bg-gradient-to-tr from-forest-100 to-stone-200 rounded-full blur-3xl opacity-30" />
             <div className="relative bg-white p-12 rounded-[2rem] shadow-sm border border-stone-100 ">
               <blockquote className="font-serif text-xl text-stone-800 leading-relaxed italic">
-                "To produce meaning in a chaotic world, one must first build a
-                wall of silence around the mind."
+                &quot;To produce meaning in a chaotic world, one must first build a
+                wall of silence around the mind.&quot;
               </blockquote>
               <cite className="block mt-6 text-stone-400 font-sans text-sm tracking-widest not-italic">
                 — The WorkVar Manifesto

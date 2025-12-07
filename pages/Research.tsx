@@ -35,10 +35,10 @@ const Research: React.FC = () => {
             </div>
             <div className="md:col-span-8 bg-stone-50 p-10 rounded-3xl border border-stone-100 shadow-sm">
               <p className="text-xl text-stone-600 font-serif leading-relaxed mb-6">
-                "It takes an average of <span className="text-stone-900 font-medium bg-forest-100/50 px-1">23 minutes and 15 seconds</span> to get back on task after being interrupted."
+                &quot;It takes an average of <span className="text-stone-900 font-medium bg-forest-100/50 px-1">23 minutes and 15 seconds</span> to get back on task after being interrupted.&quot;
               </p>
               <div className="text-stone-500 text-sm font-sans mb-8 leading-relaxed">
-                When you switch context to check a notification, your brain doesn't just switch back instantly. It leaves "attention residue" on the previous task. This fragmentation effectively lowers your functional IQ by up to 10 points—more than losing a night of sleep.
+                When you switch context to check a notification, your brain doesn&apos;t just switch back instantly. It leaves &quot;attention residue&quot; on the previous task. This fragmentation effectively lowers your functional IQ by up to 10 points—more than losing a night of sleep.
               </div>
               <div className="flex items-center text-xs text-stone-400 font-serif italic border-t border-stone-200 pt-4">
                 <FileText size={14} className="mr-2" />
@@ -58,10 +58,10 @@ const Research: React.FC = () => {
             </div>
             <div className="md:col-span-8 bg-stone-50 p-10 rounded-3xl border border-stone-100 shadow-sm">
               <p className="text-xl text-stone-600 font-serif leading-relaxed mb-6">
-                "The mere presence of your smartphone reduces brain power, even if it is turned off and face down."
+                &quot;The mere presence of your smartphone reduces brain power, even if it is turned off and face down.&quot;
               </p>
               <div className="text-stone-500 text-sm font-sans mb-8 leading-relaxed">
-                Research indicates that when your phone is visible, a part of your brain is actively working to inhibit the impulse to check it. This "brain drain" reduces your available cognitive capacity for deep work and problem solving.
+                Research indicates that when your phone is visible, a part of your brain is actively working to inhibit the impulse to check it. This &quot;brain drain&quot; reduces your available cognitive capacity for deep work and problem solving.
               </div>
               <div className="flex items-center text-xs text-stone-400 font-serif italic border-t border-stone-200 pt-4">
                 <FileText size={14} className="mr-2" />
@@ -81,10 +81,10 @@ const Research: React.FC = () => {
             </div>
             <div className="md:col-span-8 bg-stone-50 p-10 rounded-3xl border border-stone-100 shadow-sm">
               <p className="text-xl text-stone-600 font-serif leading-relaxed mb-6">
-                "Digital detox leads to lower anxiety, better sleep, and a significant return of focus capacity."
+                &quot;Digital detox leads to lower anxiety, better sleep, and a significant return of focus capacity.&quot;
               </p>
               <div className="text-stone-500 text-sm font-sans mb-8 leading-relaxed">
-                Just as nature restores the body, silence restores the mind. Attention Restoration Theory (ART) suggests that separating oneself from the 'directed attention' fatigue of screens allows the brain's executive functions to recharge.
+                Just as nature restores the body, silence restores the mind. Attention Restoration Theory (ART) suggests that separating oneself from the &apos;directed attention&apos; fatigue of screens allows the brain&apos;s executive functions to recharge.
               </div>
               <div className="flex items-center text-xs text-stone-400 font-serif italic border-t border-stone-200 pt-4">
                 <FileText size={14} className="mr-2" />
