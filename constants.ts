@@ -1,8 +1,9 @@
 import { BellOff, FileWarning, FlagOff, LucideIcon } from 'lucide-react';
-import { NavItem, Feature, Product, Resource } from './types';
+import { NavItem, Feature, Product, Resource, SocialLink } from './types';
 import navItemsData from './data/navItems.json';
 import coreFeaturesData from './data/coreFeatures.json';
 import productsData from './data/products.json';
+import socialLinksData from './data/socialLinks.json';
 
 // Icon mapping for features
 const iconMap: Record<string, LucideIcon> = {
@@ -22,6 +23,9 @@ export const CORE_FEATURES: Feature[] = (Array.isArray(coreFeaturesData) ? coreF
 
 // Export PRODUCTS from JSON with safety check
 export const PRODUCTS: Product[] = (Array.isArray(productsData) ? productsData : []) as Product[];
+
+// Export SOCIAL_LINKS from JSON with safety check
+export const SOCIAL_LINKS: SocialLink[] = (Array.isArray(socialLinksData) ? socialLinksData : []) as SocialLink[];
 
 // Resources are now loaded server-side to avoid fs module issues in client components
 // Use getResources() function in server components instead

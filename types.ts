@@ -31,3 +31,9 @@ export interface Resource {
   readTime: string;
   summary: string;
 }
+
+export interface SocialLink {
+  label: string;
+  href: string;
+  isExternal: boolean;
+}

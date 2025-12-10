@@ -1,5 +1,6 @@
 import FooterLinks from './FooterLinks';
 import Image from 'next/image';
+import { SOCIAL_LINKS } from '@/constants';
 export default function Footer() {
   const productLinks = [
     { label: 'SileoTube', href: '#', isExternal: true },
@@ -42,10 +43,11 @@ export default function Footer() {
         <div className="mt-20 pt-8 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-sm text-stone-400">
           <p>© {new Date().getFullYear()} WorkVar Pvt. Ltd. All rights reserved.</p>
           <div className="flex space-x-8 mt-6 md:mt-0">
-            <a href="#" className="hover:text-stone-600 transition-colors">Twitter</a>
-            <a href="#" className="hover:text-stone-600 transition-colors">Instagram</a>
-            <a href="#" className="hover:text-stone-600 transition-colors">Facebook</a>
-            <a href="#" className="hover:text-stone-600 transition-colors">YouTube</a>
+            {SOCIAL_LINKS.map((link) => (
+              <a key={link.label} href={link.href} className="hover:text-stone-600 transition-colors">
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
