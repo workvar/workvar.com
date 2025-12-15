@@ -10,19 +10,31 @@ export default function HeroBackground() {
   const gradientRef = useRef<HTMLDivElement>(null);
   const rippleRefs = useRef<(HTMLDivElement | null)[]>([]);
   const leafRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [leaves, setLeaves] = React.useState<
+    {
+      id: number;
+      left: string;
+      delay: number;
+      duration: number;
+      scale: number;
+      rotateStart: number;
+    }[]
+  >([]);
 
-  const leaves = React.useMemo(
-    () =>
-      Array.from({ length: 8 }).map((_, i) => ({
-        id: i,
-        left: `${Math.random() * 90}%`,
-        delay: Math.random() * 5,
-        duration: 18 + Math.random() * 10,
-        scale: 0.6 + Math.random() * 0.4,
-        rotateStart: Math.random() * 360,
-      })),
-    []
-  );
+  // Generate leaf positions only on the client after mount to avoid
+  // non-deterministic Math.random() during server-side rendering.
+  React.useEffect(() => {
+    const generatedLeaves = Array.from({ length: 8 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 90}%`,
+      delay: Math.random() * 5,
+      duration: 18 + Math.random() * 10,
+      scale: 0.6 + Math.random() * 0.4,
+      rotateStart: Math.random() * 360,
+    }));
+
+    setLeaves(generatedLeaves);
+  }, []);
 
   useGSAP(() => {
     // Breathing gradient animation
