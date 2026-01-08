@@ -28,6 +28,21 @@
     "cta": "Start planning",
     "image": "https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/patty_JcBVaygq_R.jpeg",
     "ctaUrl": "https://patty.workvar.com"
+  },
+  {
+    "id": "qrry",
+    "name": "Qrry",
+    "tagline": "Generate, customize, and export QR codes instantly",
+    "description": "QRry is a fast, AI-powered QR code generator that helps you create clean, branded QR codes in seconds. Customize colors, logos, and layouts while keeping perfect scannability. Built for founders, marketers, and builders who want simplicity without sacrificing quality.",
+    "features": [
+      "Clean UI",
+      "Customizable QR codes",
+      "Export in seconds",
+      "Perfect scannability"
+    ],
+    "cta": "Generate QR codes",
+    "image": "https://ik.imagekit.io/canarygrapher/workvar/main-website/project-showcase/tr:e-grayscale/QRry_C1prW3EcA.jpg",
+    "ctaUrl": "https://qrry.workvar.com"
   }
 ]
 
